@@ -5,27 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:dev": "cross-env NODE_ENV=development tsc && vite build",
-    "build:prod": "cross-env NODE_ENV=production tsc && vite build",
+    "build:dev": "tsc && vite build --mode development",
+    "build:prod": "tsc && vite build --mode production",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview:dev": "cross-env NODE_ENV=development  vite preview",
-    "preview:prod": "cross-env NODE_ENV=production  vite preview",
+    "preview": "vite preview",
     "format": "prettier --write src/",
     "check:dev": "cross-env NODE_ENV=development npx autoprefixer --info",
     "check:prod": "cross-env NODE_ENV=production npx autoprefixer --info"
-  },
-  "browserslist": {
-    "production": [
-      ">0.01%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "last 1 ie version"
-    ]
   },
   "dependencies": {
     "@headlessui/react": "^2.0.4",
@@ -33,6 +19,7 @@
     "@tailwindcss/forms": "^0.5.7",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.1",
+    "cssnano-preset-advanced": "^7.0.2",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-modules": "^6.0.0",
